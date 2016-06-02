@@ -65,21 +65,30 @@ namespace COMP123_Assignment_1
          */
         public static void Main(string[] args)
         {
-          
+            // Create a string for user answer if he would like to try again
+            string userAnswer = "";
+
             //----------------------------------------------------------------------------------------------
             //------------------Create a new instance(batman) of the Hero class-----------------------------
             //----------------------------------------------------------------------------------------------
-            string yes="";
+
             Hero aslan = new Hero("Batman");
+
+            /**
+            * This is a basic do while loop which ask user 
+            * how many times he wants to run methods
+            * 
+            * while (userAnswer=="yes")
+            */
             do
             {
                 aslan.Fight();
                 aslan.Show();
                 Console.WriteLine();
                 Console.WriteLine("Try again? (if YES type 'yes', if NO press enter key ) ");
-                yes = Console.ReadLine();
+                userAnswer = Console.ReadLine();
             }
-            while (yes == "yes");
+            while (userAnswer == "yes");
 
 
 
