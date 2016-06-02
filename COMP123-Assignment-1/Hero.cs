@@ -29,7 +29,10 @@ namespace COMP123_Assignment_1
         //----------------------------------------------------------------------------------------------
 
         /**
+         * <summary>
          * This is a property for our private _name field
+         * </summary>
+         * 
          * @property {string} Name
          */
         public string Name
@@ -39,55 +42,38 @@ namespace COMP123_Assignment_1
         }
 
 
-        //  /**
-        //   * <summary>
-        //   * This is a public property for our private _age field
-        //   * </summary>
-        //   * 
-        //   * @property {int} Age
-        //  */
-        //  public int Age
-        //  {
-        //      get { return this._age; }
-        //      set { this._age = value; }
-        //  }
+
+        //----------------------------------------------------------------------------------------------
+        //------------------------------------CONSTRUCTORS----------------------------------------------
+        //----------------------------------------------------------------------------------------------
+
+        /**
+         * <summary>
+         * This is default empty constructor for the Hero class
+         * </summary>
+         * 
+         * 
+         * @constructor Hero
+        */
+        public Hero()
+        {
+            // Initialize public properties
+            this.Name = "unknown name";           
+        }
 
 
-        //  //----------------------------------------------------------------------------------------------
-        //  //------------------------------------CONSTRUCTORS----------------------------------------------
-        //  //----------------------------------------------------------------------------------------------
-
-        //  /**
-        //   * <summary>
-        //   *This is default empty constructor for the Person class
-        //   * </summary>
-        //   * 
-        //   * 
-        //   * @constructor Person
-        //  */
-        //  public Hero()
-        //  {
-        //      // Initialize public properties
-        //      this.Name = "unknown name";
-        //      this._age = 0;
-
-        //  }
-
-
-
-        //  /**
-        //  * <summary>This is the constructor that takes name as a parameter and passes 
-        //  * it to the _name private instance variable
-        //  * </summary>
-        //  * 
-        //  * @constructor Person
-        //  * @param {string} name
-        // */
-        //  public Hero(string name)
-        //  {
-        //      this.Name = name;
-        //      this.Age = 0;
-        //  }
+        /**
+        * <summary>This is the constructor that takes name as a parameter and passes 
+        * it to the _name private instance variable
+        * </summary>
+        * 
+        * @constructor Hero
+        * @param {string} name
+       */
+        public Hero(string name)
+        {
+            this.Name = name;           
+        }
 
 
         //  /**
