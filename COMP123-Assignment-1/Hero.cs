@@ -105,6 +105,40 @@ namespace COMP123_Assignment_1
         }
 
 
+        /**
+        * <summary>
+        * This method will randomly determine if the Hero hits(this should be only 20% of the time)    
+        * otherwise it will return false.
+        * </summary>
+        * 
+        * @method hitAttempt
+        * @returns {bool}
+       */
+        private bool hitAttempt()
+        {
+            /*
+            * 20% is the same as 1/5
+            * Therefore we can assume that a chance to get a number 1 from 
+            * our random generation(numbers from 1 to 5)
+            * is equals to 20% 
+            */
+            if (rnd.Next(1,6)==1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
+        }
+
+
+
+       
+
+     
+
 
         //----------------------------------------------------------------------------------------------
         //-------------------------------PUBLIC METHODS-------------------------------------------------
