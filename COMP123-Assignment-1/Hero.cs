@@ -134,10 +134,43 @@ namespace COMP123_Assignment_1
         }
 
 
+        /**
+    * <summary>
+    * This method generates a random number from 1 to 6
+    * </summary>
+    * 
+    * @method randomNumberFrom1to6
+    * @returns {void}
+   */
+        private void randomNumberFrom1to6()
+        {
+            int randomMultiplier;
+            randomMultiplier = rnd.Next(1, 7);
+        }
 
-       
 
-     
+        /**
+     * <summary>
+     * This method calculates the damage the Hero causes to the target
+     * on a hit.The damage will be calculated by multiplying the Hero’s
+     * strength property by a number between 1 and 6.
+     * The method will returns this value. 
+     * </summary>
+     * 
+     * @method hitDamage
+     * @returns damage
+    */
+        private static int hitDamage(int _strength, int randomMultiplier)
+        {
+            
+            int damage;
+            damage = _strength * randomMultiplier;
+            return damage;
+        }
+
+
+
+
 
 
         //----------------------------------------------------------------------------------------------
