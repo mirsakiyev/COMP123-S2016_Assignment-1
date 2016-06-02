@@ -14,14 +14,19 @@ namespace COMP123_Assignment_1
      */
     public class Hero
     {
+        // Initializing a random number
+        Random rnd = new Random();
+
         //----------------------------------------------------------------------------------------------
         //--------------------------PRIVATE INSTANCE VARIABLES------------------------------------------
         //----------------------------------------------------------------------------------------------
-        
+
 
         private int _strength;
         private int _speed;
+        private int _health;
         private string _name;
+        
 
 
         //----------------------------------------------------------------------------------------------
@@ -71,77 +76,33 @@ namespace COMP123_Assignment_1
         * @param {string} name
        */
         public Hero(string name)
-        {
-            this.Name = name;           
+        {          
+            this.Name = name;
+            generateAbilities();
+            
         }
 
 
-        //  /**
-        // * <summary>This is the constructor that takes age as a parameter and passes 
-        // * it to the _age private instance variable
-        // * </summary>
-        // * 
-        // * @constructor Person
-        // * @param {int} age
-        // * @param {string} name
-        //*/
-        //  public Hero(int age)
-        //  {
-        //      this.Name = "unknown name";
-        //      this.Age = age;
-        //  }
+        //----------------------------------------------------------------------------------------------
+        //-----------------------------------METHODS----------------------------------------------------
+        //----------------------------------------------------------------------------------------------
 
 
-
-        //  /**
-        // * <summary>This is the constructor that takes both name and age as a parameters
-        // * It assigns the local name value to the Name property
-        // * It assigns the local age value to the Age property
-        // * it to the _age private instance variable
-        // * </summary>
-        // * 
-        // * @constructor Person
-        // * @param {int} age
-        // * @param {string} name
-        //*/
-        //  public Hero(string name, int age)
-        //  {
-        //      this.Name = name;
-        //      this.Age = age;
-        //  }
-
-
-        //  //----------------------------------------------------------------------------------------------
-        //  //-----------------------------------METHODS----------------------------------------------------
-        //  //----------------------------------------------------------------------------------------------
-
-        //  /**
-        //   * <summary>
-        //   * This method ouputs the _name value with "says hello!!1" to the console
-        //   * </summary>
-        //   * 
-        //   * @method SaysHello
-        //   * @returns {void}
-        //  */
-        //  public void SaysHello()
-        //  {
-        //      Console.WriteLine(this.Name + " " + " says hello!!1");
-        //  }
-
-
-        //  /**
-        //   * <summary>
-        //   * This method ouputs the _name and the _age values 
-        //   * in the following format: _name + "is" + _age + "years old".
-        //   * </summary>
-        //   * 
-        //   * @method ShowAge
-        //   * @returns {void}
-        //  */
-        //  public void ShowAge()
-        //  {
-        //      Console.WriteLine(this.Name + " is " + this.Age + " years old");
-        //  }
+        /**
+         * <summary>
+         * This method randomly generates the ability numbers(1-100) for the 
+         * strength, speed and health properties.
+         * </summary>
+         * 
+         * @method generateAbilities
+         * @returns {void}
+        */
+        private void generateAbilities()
+        {
+            this._strength= rnd.Next(1, 101);
+            this._speed = rnd.Next(1, 101);
+            this._health = rnd.Next(1, 101);
+        }
 
     }
 }
