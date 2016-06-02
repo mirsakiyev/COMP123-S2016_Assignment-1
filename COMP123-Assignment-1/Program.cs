@@ -29,7 +29,7 @@ using System.Threading.Tasks;
                     strength, speed and health properties. Each ability will be an integer between 1 and 100
                     (4 Marks: Functionality).
 
-            e. A public Fight Method calls the private hitAttempt method. If hitAttempt returns true,
+          +  e. A public Fight Method calls the private hitAttempt method. If hitAttempt returns true,
                     then it will call the private hitDamage method. The damage amount will then be
                     displayed in a message on the Console. Ensure that you use appropriate spacing and
                     padding to make the output as pretty as possible (4 Marks: Functionality).

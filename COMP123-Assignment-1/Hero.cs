@@ -84,7 +84,7 @@ namespace COMP123_Assignment_1
 
 
         //----------------------------------------------------------------------------------------------
-        //-----------------------------------METHODS----------------------------------------------------
+        //------------------------------PRIVATE METHODS-------------------------------------------------
         //----------------------------------------------------------------------------------------------
 
 
@@ -104,5 +104,27 @@ namespace COMP123_Assignment_1
             this._health = rnd.Next(1, 101);
         }
 
+
+
+        //----------------------------------------------------------------------------------------------
+        //-------------------------------PUBLIC METHODS-------------------------------------------------
+        //----------------------------------------------------------------------------------------------
+
+
+        /**
+         * <summary>
+         * This method calls the private hitAttempt method. If hitAttempt returns true,
+         * then it will call the private hitDamage method. The damage amount will then be
+         * displayed in a message on the Console.
+         * </summary>
+         * 
+         * @method Fight
+         * @returns {void}
+        */
+        private void Fight()
+        {
+            //hitAttempt();
+            // if hitAttempt() is true then call hitDamage
+        }
     }
 }
