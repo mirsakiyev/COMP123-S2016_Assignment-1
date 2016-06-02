@@ -29,7 +29,7 @@ using System.Threading.Tasks;
                     strength, speed and health properties. Each ability will be an integer between 1 and 100
                     (4 Marks: Functionality).
 
-          ?  e. A public Fight Method calls the private hitAttempt method. If hitAttempt returns true,
+          +  e. A public Fight Method calls the private hitAttempt method. If hitAttempt returns true,
                     then it will call the private hitDamage method. The damage amount will then be
                     displayed in a message on the Console. Ensure that you use appropriate spacing and
                     padding to make the output as pretty as possible (4 Marks: Functionality).
@@ -41,7 +41,7 @@ using System.Threading.Tasks;
                     on a hit. The damage will be calculated by multiplying the Hero’s strength property by a
                     number between 1 and 6. The method will return this value. (3 Marks: Functionality).
 
-            h. A public Show Method that will display the Hero’s ability scores to the console. Ensure
+          +  h. A public Show Method that will display the Hero’s ability scores to the console. Ensure
                     that you use appropriate spacing and padding to make the output as pretty as possible
                     (2 Marks: Functionality).
  *
@@ -64,14 +64,13 @@ namespace COMP123_Assignment_1
          * @param {string[]} args
          */
         public static void Main(string[] args)
-        {
-            
-
+        {          
             //----------------------------------------------------------------------------------------------
-            //----------------Create a new instance(aslan) of the Person class------------------------------
+            //------------------Create a new instance(aslan) of the Hero class------------------------------
             //----------------------------------------------------------------------------------------------
-            Hero aslan = new Hero("Aslan");                        
-            aslan.Fight();          
+            Hero aslan = new Hero("Batman");                        
+            aslan.Fight();
+            aslan.Show();   
             Console.WriteLine();
             
 

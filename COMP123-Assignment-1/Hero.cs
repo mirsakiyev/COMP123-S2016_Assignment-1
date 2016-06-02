@@ -14,12 +14,13 @@ namespace COMP123_Assignment_1
      */
     public class Hero
     {
-        string separator = "-------------------------------------";
+        string separator = "--------------------";
+        Random rnd = new Random();
 
         //----------------------------------------------------------------------------------------------
         //--------------------------PRIVATE INSTANCE VARIABLES------------------------------------------
         //----------------------------------------------------------------------------------------------
-        Random rnd = new Random();
+
 
         private int _strength;
         private int _speed;
@@ -54,20 +55,7 @@ namespace COMP123_Assignment_1
         //------------------------------------CONSTRUCTORS----------------------------------------------
         //----------------------------------------------------------------------------------------------
 
-        /**
-         * <summary>
-         * This is default empty constructor for the Hero class
-         * </summary>
-         * 
-         * 
-         * @constructor Hero
-        */
-        public Hero()
-        {
-            // Initialize public properties
-            this.Name = "unknown name";           
-        }
-
+     
 
         /**
         * <summary>This is the constructor that takes name as a parameter and passes 
@@ -88,8 +76,6 @@ namespace COMP123_Assignment_1
         //----------------------------------------------------------------------------------------------
 
 
-
-
         /**
          * <summary>
          * This method randomly generates the ability numbers(1-100) for the 
@@ -100,25 +86,12 @@ namespace COMP123_Assignment_1
          * @returns {void}
         */
         public void generateAbilities()
-        {
-            Random rnd = new Random();
+        {          
             this._strength = rnd.Next(1, 101);
             this._speed = rnd.Next(1, 101);
-            this._health = rnd.Next(1, 101);
-            Console.WriteLine("* STRENGTH: " + _strength);
-            Console.WriteLine(separator);
-            Console.WriteLine("* SPEED: " + _speed);
-            Console.WriteLine(separator);
-            Console.WriteLine("* HEALTH: " + _health);
-            Console.WriteLine(separator);
+            this._health = rnd.Next(1, 101);         
         }
-
-        public void Test()
-        {
-            //generateAbilities();
-            
-        }
-
+    
 
         /**
         * <summary>
@@ -133,19 +106,20 @@ namespace COMP123_Assignment_1
         {                      
             /*
             * 20% is the same as 1/5
-            * Therefore we can assume that a chance to get a number 1 from 
-            * our random generation(numbers from 1 to 5)
-            * is equals to 20% 
+            * Therefore we can assume that a chance to get a number "tree" from 
+            * our random generation(numbers from 1 to 5) is equals to 20% 
             */
-           
-            if (rnd.Next(1, 6) == 1)
-            {             
-                Console.WriteLine("Hero hit");
+                      
+            if (rnd.Next(1, 6) == 3)
+            {
+                Console.WriteLine("     -= S M A S H =-");
+                Console.WriteLine();
+                Console.WriteLine("     " + Name+" HIT");
                 return true;
             }
             else
             {
-                Console.WriteLine("Hero didnt hit");
+                Console.WriteLine("     " + Name+ " DIDN'T HIT   :(");
                 return false;
             }
             
@@ -158,7 +132,6 @@ namespace COMP123_Assignment_1
      * This method calculates the damage the Hero causes to the target
      * on a hit.The damage will be calculated by multiplying the Hero’s
      * strength property by a number between 1 and 6.
-     * The method will returns this value. 
      * </summary>
      * 
      * @method hitDamage
@@ -169,14 +142,10 @@ namespace COMP123_Assignment_1
         {          
 
             int damage;          
-            Console.WriteLine();
-
-            
+            Console.WriteLine();         
             int randomNum = rnd.Next(1, 7);
-            Console.WriteLine(randomNum);
-
             damage = strength * randomNum;
-            Console.WriteLine("DAMAGE: " + damage);
+            Console.WriteLine("     DAMAGE: " + damage);
             return damage;
             
         }
@@ -208,9 +177,19 @@ namespace COMP123_Assignment_1
             else
             {
                              
-            }
-          
+            }         
         }
     
+        public void Show()
+        {
+            Console.WriteLine();
+            Console.WriteLine(separator);
+            Console.WriteLine(" * STRENGTH |  " + _strength+"  | ");
+            Console.WriteLine(separator);
+            Console.WriteLine(" * SPEED    |  " + _speed + "  | ");
+            Console.WriteLine(separator);
+            Console.WriteLine(" * HEALTH   |  " + _health + "  | ");
+            Console.WriteLine(separator);
+        }
     }
 }
