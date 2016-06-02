@@ -14,19 +14,21 @@ namespace COMP123_Assignment_1
      */
     public class Hero
     {
-        // Initializing a random number
-        Random rnd = new Random();
+        string separator = "-------------------------------------";
 
         //----------------------------------------------------------------------------------------------
         //--------------------------PRIVATE INSTANCE VARIABLES------------------------------------------
         //----------------------------------------------------------------------------------------------
-
+        Random rnd = new Random();
 
         private int _strength;
         private int _speed;
         private int _health;
         private string _name;
-        
+
+      
+        //private int _randomMultiplier;
+
 
 
         //----------------------------------------------------------------------------------------------
@@ -78,14 +80,14 @@ namespace COMP123_Assignment_1
         public Hero(string name)
         {          
             this.Name = name;
-            generateAbilities();
-            
+            generateAbilities();                
         }
-
 
         //----------------------------------------------------------------------------------------------
         //------------------------------PRIVATE METHODS-------------------------------------------------
         //----------------------------------------------------------------------------------------------
+
+
 
 
         /**
@@ -97,11 +99,24 @@ namespace COMP123_Assignment_1
          * @method generateAbilities
          * @returns {void}
         */
-        private void generateAbilities()
+        public void generateAbilities()
         {
-            this._strength= rnd.Next(1, 101);
+            Random rnd = new Random();
+            this._strength = rnd.Next(1, 101);
             this._speed = rnd.Next(1, 101);
             this._health = rnd.Next(1, 101);
+            Console.WriteLine("* STRENGTH: " + _strength);
+            Console.WriteLine(separator);
+            Console.WriteLine("* SPEED: " + _speed);
+            Console.WriteLine(separator);
+            Console.WriteLine("* HEALTH: " + _health);
+            Console.WriteLine(separator);
+        }
+
+        public void Test()
+        {
+            //generateAbilities();
+            
         }
 
 
@@ -115,39 +130,28 @@ namespace COMP123_Assignment_1
         * @returns {bool}
        */
         private bool hitAttempt()
-        {
+        {                      
             /*
             * 20% is the same as 1/5
             * Therefore we can assume that a chance to get a number 1 from 
             * our random generation(numbers from 1 to 5)
             * is equals to 20% 
             */
-            if (rnd.Next(1,6)==1)
-            {
+           
+            if (rnd.Next(1, 6) == 1)
+            {             
+                Console.WriteLine("Hero hit");
                 return true;
             }
             else
             {
+                Console.WriteLine("Hero didnt hit");
                 return false;
             }
             
         }
 
-
-        /**
-    * <summary>
-    * This method generates a random number from 1 to 6
-    * </summary>
-    * 
-    * @method randomNumberFrom1to6
-    * @returns {void}
-   */
-        private void randomNumberFrom1to6()
-        {
-            int randomMultiplier;
-            randomMultiplier = rnd.Next(1, 7);
-        }
-
+       
 
         /**
      * <summary>
@@ -160,18 +164,25 @@ namespace COMP123_Assignment_1
      * @method hitDamage
      * @returns damage
     */
-        private static int hitDamage(int _strength, int randomMultiplier)
-        {
+             
+        private int hitDamage(int strength)
+        {          
+
+            int damage;          
+            Console.WriteLine();
+
             
-            int damage;
-            damage = _strength * randomMultiplier;
+            int randomNum = rnd.Next(1, 7);
+            Console.WriteLine(randomNum);
+
+            damage = strength * randomNum;
+            Console.WriteLine("DAMAGE: " + damage);
             return damage;
+            
         }
 
-
-
-
-
+        
+      
 
         //----------------------------------------------------------------------------------------------
         //-------------------------------PUBLIC METHODS-------------------------------------------------
@@ -188,10 +199,18 @@ namespace COMP123_Assignment_1
          * @method Fight
          * @returns {void}
         */
-        private void Fight()
+        public void Fight()
         {
-            //hitAttempt();
-            // if hitAttempt() is true then call hitDamage
+            if (hitAttempt())
+            {
+                hitDamage(this._strength);                                                       
+            }
+            else
+            {
+                             
+            }
+          
         }
+    
     }
 }

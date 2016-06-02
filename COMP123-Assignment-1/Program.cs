@@ -37,7 +37,7 @@ using System.Threading.Tasks;
           +  f. A private hitAttempt Method that will randomly determine if the Hero hits (this should
                     be only 20% of the time) otherwise it will return false. (3 Marks: Functionality).
 
-            g. A private hitDamage Method that calculates the damage the Hero causes to the target
+          +  g. A private hitDamage Method that calculates the damage the Hero causes to the target
                     on a hit. The damage will be calculated by multiplying the Hero’s strength property by a
                     number between 1 and 6. The method will return this value. (3 Marks: Functionality).
 
@@ -65,14 +65,15 @@ namespace COMP123_Assignment_1
          */
         public static void Main(string[] args)
         {
-            string separator = "-------------------------------------";
+            
 
             //----------------------------------------------------------------------------------------------
             //----------------Create a new instance(aslan) of the Person class------------------------------
             //----------------------------------------------------------------------------------------------
-            Hero aslan = new Hero();
-            aslan.Name = "Aslan";        
-
+            Hero aslan = new Hero("Aslan");                        
+            aslan.Fight();          
+            Console.WriteLine();
+            
 
         }
     }
