@@ -10,7 +10,7 @@ using System.Threading.Tasks;
  * Student ID : 300850326
  * Date : 02.06.2016
  * Submitted to : Tom Tsiliopoulos
- * GitHub link : 
+ * GitHub link : https://github.com/mirsakiyev/COMP123-S2016_Assignment-1.git
  *
  * Instructions:
 
@@ -66,7 +66,7 @@ namespace COMP123_Assignment_1
         public static void Main(string[] args)
         {          
             //----------------------------------------------------------------------------------------------
-            //------------------Create a new instance(aslan) of the Hero class------------------------------
+            //------------------Create a new instance(batman) of the Hero class-----------------------------
             //----------------------------------------------------------------------------------------------
             Hero aslan = new Hero("Batman");                        
             aslan.Fight();

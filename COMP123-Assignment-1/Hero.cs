@@ -112,13 +112,15 @@ namespace COMP123_Assignment_1
                       
             if (rnd.Next(1, 6) == 3)
             {
-                Console.WriteLine("     -= S M A S H =-");
                 Console.WriteLine();
-                Console.WriteLine("     " + Name+" HIT");
+                Console.WriteLine("   -= S M A S H =-");
+                Console.WriteLine();
+                Console.WriteLine("     " + Name+" HITS");
                 return true;
             }
             else
             {
+                Console.WriteLine();
                 Console.WriteLine("     " + Name+ " DIDN'T HIT   :(");
                 return false;
             }
