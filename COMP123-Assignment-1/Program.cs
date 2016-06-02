@@ -64,13 +64,25 @@ namespace COMP123_Assignment_1
          * @param {string[]} args
          */
         public static void Main(string[] args)
-        {          
+        {
+          
             //----------------------------------------------------------------------------------------------
             //------------------Create a new instance(batman) of the Hero class-----------------------------
             //----------------------------------------------------------------------------------------------
-            Hero aslan = new Hero("Batman");                        
-            aslan.Fight();
-            aslan.Show();   
+            string yes="";
+            Hero aslan = new Hero("Batman");
+            do
+            {
+                aslan.Fight();
+                aslan.Show();
+                Console.WriteLine();
+                Console.WriteLine("Try again? (if YES type 'yes', if NO press enter key ) ");
+                yes = Console.ReadLine();
+            }
+            while (yes == "yes");
+
+
+
             Console.WriteLine();
             
 
